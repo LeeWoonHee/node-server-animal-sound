@@ -11,21 +11,15 @@ app.get('/', function (req, res) {
 app.get('/sound/:name', (req,res) => {
   const p = req.params.name
   if(p === 'dog') {
-    res.send('멍멍')
+    res.json({'sound' : '멍멍'})
   }else if(p === 'cat'){
-    res.send('야옹')
+    res.json({'sound' : '야옹'})
   }else if(p === 'pig'){
-    res.send('꿀꿀')
+    res.json({'sound' : '꿀꿀'})
   }else{
     res.send('알수없는 동물입니다')
   }
 })
 
-
-
-app.get('/user/:id', (req,res) => {
-    const q = req.params 
-    res.send(q.id)
-})
 
 app.listen(3000)
